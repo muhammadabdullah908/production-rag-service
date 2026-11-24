@@ -1,0 +1,38 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environment
+.venv/
+venv/
+
+# Environment variables and secrets
+.env
+!.env.example
+
+# Uploaded and processed documents
+data/uploads/*
+data/processed/*
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Logs
+logs/*
+*.log
+
+# Frontend
+node_modules/
+frontend/dist/
+
+# IDE
+.vscode/
+.idea/
+
+# Operating system
+.DS_Store
+Thumbs.db
