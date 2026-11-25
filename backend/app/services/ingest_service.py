@@ -9,7 +9,7 @@ from pathlib import Path
 from app.core.config import settings
 from app.ingestion.chunker import chunk_units
 from app.ingestion.embeddings import embed_texts
-from app.ingestion.extractors import extract_document
+from app.ingestion.extractors import extract_document, DocumentExtractionError
 from app.retrieval.vector_store import delete_document, get_collection, upsert_chunks
 
 logger = logging.getLogger(__name__)
@@ -57,7 +57,10 @@ def ingest_file(path: Path) -> dict:
             f"Document already exists with id={existing_id}"
         )
 
-    units = extract_document(path)
+    try:
+        units = extract_document(path)
+    except DocumentExtractionError as e:
+        raise EmptyDocumentError(str(e)) from e
     if not units:
         raise EmptyDocumentError("No extractable text found in document")
 

@@ -1,0 +1,102 @@
+[
+  {
+    "question": "What is Artificial Intelligence?",
+    "answerable": true
+  },
+  {
+    "question": "What is a subset of Artificial Intelligence?",
+    "answerable": true
+  },
+  {
+    "question": "What does Deep Learning use?",
+    "answerable": true
+  },
+  {
+    "question": "How does Machine Learning learn?",
+    "answerable": true
+  },
+  {
+    "question": "What learns from data?",
+    "answerable": true
+  },
+  {
+    "question": "What is the main topic of the document?",
+    "answerable": true
+  },
+  {
+    "question": "Does Deep Learning use neural networks?",
+    "answerable": true
+  },
+  {
+    "question": "Name one thing that is a field of computer science.",
+    "answerable": true
+  },
+  {
+    "question": "What is Machine Learning a subset of?",
+    "answerable": true
+  },
+  {
+    "question": "What learns complex patterns?",
+    "answerable": true
+  },
+  {
+    "question": "Is Machine Learning part of Deep Learning?",
+    "answerable": false
+  },
+  {
+    "question": "What are the applications of AI in healthcare?",
+    "answerable": false
+  },
+  {
+    "question": "Whose name appears in the copyright notice?",
+    "answerable": true
+  },
+  {
+    "question": "What is the history of Neural Networks?",
+    "answerable": false
+  },
+  {
+    "question": "How do I bake a chocolate cake?",
+    "answerable": false
+  },
+  {
+    "question": "Tell me about AI and machine learning in detail.",
+    "answerable": true
+  },
+  {
+    "question": "What uses neural networks to learn complex patterns?",
+    "answerable": true
+  },
+  {
+    "question": "Is AI a subset of Machine Learning?",
+    "answerable": true
+  },
+  {
+    "question": "What enables computers to learn from data?",
+    "answerable": true
+  },
+  {
+    "question": "What is the relationship between AI and Deep Learning?",
+    "answerable": true
+  },
+  {
+    "question": "What is the capital of France?",
+    "answerable": false
+  },
+  {
+    "question": "What field of computer science is Artificial Intelligence?",
+    "answerable": true
+  },
+  {
+    "question": "Does Deep Learning use simple patterns?",
+    "answerable": false
+  },
+  {
+    "question": "What is machine learning and deep learning?",
+    "answerable": true
+  },
+  {
+    "question": "Why is the sky blue?",
+    "answerable": false
+  }
+]

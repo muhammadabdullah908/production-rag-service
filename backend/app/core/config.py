@@ -1,21 +1,31 @@
+
 """Central configuration. All secrets come from environment variables."""
+
+from pathlib import Path
+
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
+# Locate the project root:
+# config.py -> core -> app -> backend -> project root
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+ENV_FILE = PROJECT_ROOT / ".env"
+
+
 class Settings(BaseSettings):
-    """Application settings loaded from .env (never hard-coded)."""
+    """Application settings loaded from the project-root .env."""
 
     model_config = SettingsConfigDict(
-        env_file=".env",
+        env_file=ENV_FILE,
         env_file_encoding="utf-8",
         extra="ignore",
     )
 
-    # LLM (Groq — free tier, no credit card)
-    groq_api_key: str = ""
-    groq_model: str = "openai/gpt-oss-120b"
+    # LLM
+    groq_api_key: str
+    groq_model: str = "openai/gpt-oss-20b"
 
-    # Embeddings (local, no API key)
+    # Embeddings
     embedding_model: str = "all-MiniLM-L6-v2"
 
     # Vector store
@@ -31,7 +41,9 @@ class Settings(BaseSettings):
 
     # Ingestion
     max_file_size_mb: int = 50
-    allowed_extensions: tuple[str, ...] = ("pdf", "docx", "pptx", "txt", "md")
+    allowed_extensions: tuple[str, ...] = (
+        "pdf", "docx", "pptx", "txt", "md"
+    )
 
 
 settings = Settings()

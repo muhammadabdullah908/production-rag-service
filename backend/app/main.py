@@ -1,28 +1,23 @@
-
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from app.api.routes import documents, ask
 
-# Create the FastAPI application
-app = FastAPI(
-    title="Production RAG Service",
-    description="A document-based Retrieval-Augmented Generation API",
-    version="1.0.0",
+app = FastAPI(title="Production RAG Service")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://127.0.0.1:5500",
+        "http://localhost:5500",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
-
-@app.get("/")
-async def root():
-    """Welcome endpoint."""
-    return {
-        "message": "Welcome to Production RAG Service!",
-        "status": "running",
-        "version": "1.0.0",
-    }
-
+app.include_router(documents.router, prefix="/api")
+app.include_router(ask.router, prefix="/api")
 
 @app.get("/health")
-async def health_check():
-    """Check whether the backend is healthy."""
-    return {
-        "status": "healthy",
-        "service": "Production RAG Service",
-    }
+def health_check():
+    return {"status": "ok"}

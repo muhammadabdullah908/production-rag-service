@@ -36,3 +36,10 @@ frontend/dist/
 # Operating system
 .DS_Store
 Thumbs.db
+
+# Backend runtime data
+backend/data/
+
+
+# Nested duplicate repository
+/production-rag-service/
